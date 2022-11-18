@@ -1,38 +1,68 @@
-class data{
-    // simpan data kedalam array
-    String nama,divisi,jabatan;
-    int total,tambahan;
-    // public adalah access data yang bersifat bebas untuk diakses
-    public void data_karyawan(){
-        System.out.println("nama : "+nama+"\ndivisi : "+divisi+"\njabatan : "+jabatan);
-    }
-    void data_gaji(){
+import java.util.Scanner;
 
+class murid{
+    String nama,kelas,NISN,pilihan2;
+    int pilihan,spp,pangkal,gedung;
+    Scanner murid_input = new Scanner(System.in);
+    void data_murid(){
+        System.out.println("Selamat datang di system pembayaran SPP");
+        System.out.print("Masukan nama : ");
+        nama = murid_input.next();
+        System.out.print("Masukan Kelas : ");
+        kelas = murid_input.next();
+        System.out.print("Masukan NISN : ");
+        NISN = murid_input.next();
     }
-    // non void dan penggunaan paramater yang menambahkan attribute didalam tunjangan() yang disertakan type datanya
-    int tunjangan(int gaji,String jabatan){
-        if (jabatan == "supervisor"){
-            tambahan = 3000000;
-            total = gaji+tambahan;
+    void data_menu(){
+        while (true){
+            System.out.println("1.Pembayaran SPP\n2.Pembayaran Uang Pangkal\n3.Pembayaran Uang Gedung");
+            System.out.print("Masukan Pilihan : ");
+            pilihan = murid_input.nextInt();
+            if (pilihan == 1){
+                System.out.println("Selamat datang "+nama);
+                System.out.print("silahkan masukan nominal pembayaran : ");
+                spp = murid_input.nextInt();
+            }
+            else if (pilihan == 2){
+                System.out.println("Selamat datang "+nama);
+                System.out.print("silahkan masukan nominal pembayaran : ");
+                pangkal = murid_input.nextInt();
+
+            }
+            else if (pilihan == 3){
+                System.out.println("Selamat datang "+nama);
+                System.out.print("silahkan masukan nominal pembayaran : ");
+                gedung = murid_input.nextInt();
+            }
+        System.out.print("input lagi ? (y/n)");
+        pilihan2 = murid_input.next();
+        if (pilihan2.equals("y")){
+            System.out.println("");
         }
-        else if(jabatan == "manager"){
-            tambahan = 5000000;
-            total = gaji+tambahan;
+        else{
+            break;
         }
-        return total;
+        }
     }
 }
-public class penggajian {
-    public static void main(String[] args) {
-        // 
-        data a = new data();
-        // dengan parameter
-        System.out.println(""+(a.tunjangan(200000,"manager")));
-        // tanpa parameter
-        a.nama = "pikawi";
-        a.divisi = "kepala negara konoha";
-        a.jabatan = "supervisor";
-        a.data_karyawan();
-        
+class pembayaran{
+    int a,b;
+    int bayarspp(int a,int b){
+        this.a = a;
+        this.b = b;
+        System.out.println(a+b);
+        return a+b;
     }
+}
+
+public class buah {
+    public static void main(String[] args) {
+        murid display = new murid();
+        pembayaran payment = new pembayaran();
+        display.data_murid();
+        display.data_menu();
+        System.out.print("total semua adalah : ");
+        payment.bayarspp(display.spp, display.gedung);
+    }
+    
 }
