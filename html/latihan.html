@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style dengan CSS</title>
+</head>
+<body>
+    <div class="container">
+        <div class="block">
+            <p>Paragrap ini akan ditampilkan dengan pengaturan gaya menggunakan css. Paragrap merupakan salah satu dari element berjenis block yang akan tampil di browser
+                memenuhi area dari ujung kiri sampai kanan layar. Elemen block lainnya adalah heading
+            </p>
+            <a href="https://google.com">Mengarah Ke Google</a>
+        </div>
+    </div>
+    <style>
+        body{
+            padding:10px;
+            margin:0;
+            background-color:yellow;
+        }
+        .container{
+            height: 200px;
+            padding:20px;    
+            position:relative
+        }
+        .block{
+            border:2px solid #a9a9a9;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-align: center;
+        }
+        .block p{
+            color:red;
+            padding:0 0 10px 0;
+        }
+        .block a{
+            text-decoration: none;
+            color:#ffff;
+            margin:20px;
+        }
+        .block a:hover{
+            color:yellow;
+        }
+    </style>
+</body>
+</html>
